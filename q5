@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        // Sample run
+        int number = 9294;
+        int result = sum_Of_Digits(number);
+        System.out.println("Sum of digits of " + number + " until the number is a single digit is " + result);
+    }
+
+    public static int sum_Of_Digits(int n) {
+        // Continue calculating the sum of digits until the result is a single digit
+        while (n >= 10) {
+            int sum = 0;
+            // Calculate the sum of digits of the current number
+            while (n > 0) {
+                sum += n % 10;
+                n /= 10;
+            }
+            // Update n with the sum of digits
+            n = sum;
+        }
+        // Return the single digit result
+        return n;
+    }
+}
